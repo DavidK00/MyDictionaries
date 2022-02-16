@@ -82,7 +82,7 @@ def deal_cards(deck, number):
     
 
     # Display the value of the hand.
-    print(value)
+    print(hand_value)
     print(dealt_cards)
     
     
