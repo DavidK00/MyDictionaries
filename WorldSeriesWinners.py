@@ -5,7 +5,6 @@ def world_series_coutner():
     
     for line in text:
         line = line.strip()
-        line = line.lower()
         words = line.split("\n")
         
         for i in words:
@@ -15,6 +14,7 @@ def world_series_coutner():
                 team[i] = 1
     print(team)
 
+
 from ast import Continue
 from distutils import text_file
 from unittest import skip
@@ -23,24 +23,25 @@ from unittest import skip
 def year_won():
     year_input = int(input('Enter a year to see what team won the World Series: '))
     text = open('WorldSeriesWinners.txt', 'r')
-    year = {}
 
-    starter_year = 1903
+    teams = {}
 
-    for i in range(starter_year,2009):
-        for row in text:
-            year[starter_year] = row
-            starter_year += 1 
-    
+    year = 1903
 
-    for key, value in year.items():
-       year[key] = value.rstrip() 
+    for team in text:
+        if year == 1904 or year == 1994:
+            year += 1
+        teams[year] = team
+        year += 1
+         
 
-    year[1904] = 'Not Played'     
-    year[1994] = 'Not Played'
 
-    print(year[year_input])
-    print(year)
+    for key, value in teams.items():
+       teams[key] = value.rstrip() 
+
+
+    print(teams[year_input])
+    print(teams)
     
     
 
