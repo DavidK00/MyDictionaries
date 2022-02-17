@@ -1,20 +1,22 @@
 
-# # def world_series_coutner():
-# #     text = open('WorldSeriesWinners.txt', 'r')
-# #     team = {}
+def world_series_coutner():
+    text = open('WorldSeriesWinners.txt', 'r')
+    team = {}
     
-# #     for line in text:
-# #         line = line.strip()
-# #         line = line.lower()
-# #         words = line.split("\n")
+    for line in text:
+        line = line.strip()
+        line = line.lower()
+        words = line.split("\n")
         
-# #         for i in words:
-# #             if i in team:
-# #                 team[i] = team[i] + 1
-# #             else:
-# #                 team[i] = 1
-# #     print(team)
+        for i in words:
+            if i in team:
+                team[i] = team[i] + 1
+            else:
+                team[i] = 1
+    print(team)
 
+from ast import Continue
+from distutils import text_file
 from unittest import skip
 
 
@@ -24,22 +26,15 @@ def year_won():
     year = {}
 
     starter_year = 1903
-    
 
     for i in range(starter_year,2009):
-        if i != 1904  or i != 1994:
-            for row in text:
-                year[starter_year] = row
-                starter_year += 1
-        else:
-            skip
+        for row in text:
+            year[starter_year] = row
+            starter_year += 1 
+    
 
-            
-            
-        
-        
     for key, value in year.items():
-        year[key] = value.rstrip() 
+       year[key] = value.rstrip() 
 
     year[1904] = 'Not Played'     
     year[1994] = 'Not Played'
@@ -50,5 +45,7 @@ def year_won():
     
 
 
-#world_series_coutner()
+world_series_coutner()
 year_won()
+
+
