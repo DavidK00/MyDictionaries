@@ -7,11 +7,11 @@ def main():
         line = line.lower()
         words = line.split(" ")
         
-        for word in words:
-            if word in word_counter:
-                word_counter[word] = word_counter[word] + 1
+        for i in words:
+            if i in word_counter:
+                word_counter[i] = word_counter[i] + 1
             else:
-                word_counter[word] = 1
+                word_counter[i] = 1
     print(word_counter)
     
 main()
