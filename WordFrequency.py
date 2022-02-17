@@ -4,7 +4,6 @@ def main():
     
     for line in text:
         line = line.strip()
-        line = line.lower()
         words = line.split(" ")
         
         for i in words:
